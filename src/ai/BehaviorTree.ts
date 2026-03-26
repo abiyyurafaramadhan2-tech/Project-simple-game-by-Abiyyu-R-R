@@ -1,4 +1,4 @@
-export abstract class BTNode {
+  export abstract class BTNode {
   abstract run(context: any): 'success' | 'failure' | 'running';
 }
 
@@ -51,5 +51,15 @@ export class Action extends BTNode {
   }
   run(context: any): 'success' | 'failure' | 'running' {
     return this.action(context);
+  }
+}
+
+export class BehaviorTree {
+  private root: BTNode;
+  constructor(root: BTNode) {
+    this.root = root;
+  }
+  run(context: any): 'success' | 'failure' | 'running' {
+    return this.root.run(context);
   }
 }
