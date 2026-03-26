@@ -122,4 +122,4 @@ export class InputManager {
   getInput(): IInputState {
     return { ...this.inputState };
   }
-    }
+}
