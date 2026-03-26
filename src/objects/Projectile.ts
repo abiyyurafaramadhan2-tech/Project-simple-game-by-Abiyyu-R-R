@@ -5,7 +5,7 @@ export class Projectile extends Phaser.GameObjects.Arc {
   public damage: number = 0;
   public owner: 'player' | 'enemy' = 'player';
   
-  constructor(scene: Phaser.Scene, x: number, y: number, direction: Phaser.Math.Vector2, speed: number, damage: number, owner: 'player' | 'enemy') {
+  constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, 5, 0xffff00);
     this.setDepth(5);
     scene.add.existing(this);
@@ -35,6 +35,9 @@ export class Projectile extends Phaser.GameObjects.Arc {
   
   deactivate() {
     this.active = false;
+    this.setVisible(false);
+  }
+}    this.active = false;
     this.setVisible(false);
   }
 }
