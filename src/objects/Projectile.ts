@@ -37,7 +37,4 @@ export class Projectile extends Phaser.GameObjects.Arc {
     this.active = false;
     this.setVisible(false);
   }
-}    this.active = false;
-    this.setVisible(false);
-  }
 }
